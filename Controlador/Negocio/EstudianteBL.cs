@@ -12,8 +12,16 @@ namespace Clase5.Controlador.Negocio
     {
         public List<Estudiante> GetEstudiantes()
         {
-            EstudianteDA objEstudianteBaseDatos= new EstudianteDA();
+            EstudianteDA objEstudianteBaseDatos = new EstudianteDA();
             return objEstudianteBaseDatos.getEstudiantes();
         }
+
+        public void addEstudiante(Estudiante objEstudiante)
+        {
+            EstudianteDA objEstudianteBaseDatos = new EstudianteDA();
+            objEstudianteBaseDatos.addEstudiante(objEstudiante);
+        }
+
+
     }
 }

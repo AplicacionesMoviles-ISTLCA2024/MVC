@@ -51,10 +51,13 @@
             // 
             // grdEstudiantes
             // 
+            grdEstudiantes.AllowUserToAddRows = false;
+            grdEstudiantes.AllowUserToDeleteRows = false;
             grdEstudiantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdEstudiantes.Dock = DockStyle.Fill;
             grdEstudiantes.Location = new Point(0, 0);
             grdEstudiantes.Name = "grdEstudiantes";
+            grdEstudiantes.ReadOnly = true;
             grdEstudiantes.Size = new Size(484, 191);
             grdEstudiantes.TabIndex = 0;
             // 
@@ -79,6 +82,7 @@
             btnNuevo.TabIndex = 3;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnModificar
             // 
@@ -109,6 +113,7 @@
             btnSalir.TabIndex = 0;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // frmEstudiantes
             // 

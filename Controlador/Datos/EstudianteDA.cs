@@ -28,6 +28,39 @@ namespace Clase5.Controlador.Datos
             return respuesta;
         }
 
+        public void addEstudiante(Estudiante objEstudiante)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = BaseDatos.getConexionSql();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "SP_INS_ESTUDIANTE";
+
+            SqlParameter parameter1 = new SqlParameter("CEDULA",objEstudiante.Cedula);
+            cmd.Parameters.Add(parameter1);
+
+            SqlParameter parameter2 = new SqlParameter("NOMBRES", objEstudiante.Nombres);
+            cmd.Parameters.Add(parameter2);
+
+            SqlParameter parameter3 = new SqlParameter("APELLIDOS", objEstudiante.Apellidos);
+            cmd.Parameters.Add(parameter3);
+
+
+            SqlParameter parameter4 = new SqlParameter("DIRECCION", objEstudiante.Direccion);
+            cmd.Parameters.Add(parameter4);
+
+
+            SqlParameter paramete5 = new SqlParameter("FECHA_NACIMIENTO", objEstudiante.Fecha_nacimieno);
+            cmd.Parameters.Add(paramete5);
+
+
+            SqlParameter paramete6 = new SqlParameter("CONTRASENA", objEstudiante.Contrasena);
+            cmd.Parameters.Add(paramete6);
+
+            cmd.ExecuteNonQuery();
+
+        }
+
+
         private List<Estudiante> fillEstudiantes(DataTable dt)
         {
             List<Estudiante> respuesta = new List<Estudiante>();

@@ -20,8 +20,27 @@ namespace Clase5.Vista
 
         private void frmEstudiantes_Load(object sender, EventArgs e)
         {
+            cargarEstudiantes();
+           
+        }
+
+        private void cargarEstudiantes()
+        {
             EstudianteBL objControladorEstudiante = new EstudianteBL();
-            grdEstudiantes.DataSource= objControladorEstudiante.GetEstudiantes();
+            grdEstudiantes.DataSource = objControladorEstudiante.GetEstudiantes();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmEstudianteModal form = new frmEstudianteModal();
+            form.tipo = "N";
+            form.ShowDialog();
+            cargarEstudiantes();
         }
     }
 }
